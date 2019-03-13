@@ -1,7 +1,7 @@
 {
-  "name": "com-search-audit-service",
+  "name": "mailApi",
   "type": "Liberty",
-  "scm": "com-search-audit-service",
+  "scm": "mailApi",
   "runtime": {
     "binary": {}
   }

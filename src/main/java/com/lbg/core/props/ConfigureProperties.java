@@ -11,7 +11,7 @@ public class ConfigureProperties {
 
 	public  Properties getProp(MailRequest mailRequest) {
 		
-		prop.put("mail.smtp.auth", true);
+	//	prop.put("mail.smtp.auth", true);
 		prop.put("mail.smtp.starttls.enable", "true");
 		prop.put("mail.smtp.host", mailRequest.getHost());
 		prop.put("mail.smtp.port", mailRequest.getPort());
