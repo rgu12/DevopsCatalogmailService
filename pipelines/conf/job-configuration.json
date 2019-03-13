@@ -1,0 +1,54 @@
+{
+	"journey": "ob-com",
+	"mavengoals": {
+		"unit": "clean test",
+		"sonar": "clean test cobertura:cobertura org.sonarsource.scanner.maven:sonar-maven-plugin:3.3.0.603:sonar",
+		"package": "-U clean package -DskipTests=true"
+	},
+	"nexus": {
+		"url": "https://nexus.sandbox.extranet.group/nexus/content/repositories/releases"
+	},
+	
+	"maven": {
+		"pom": "",
+		"settings": "pipelines/conf/settings.xml"
+	},
+	"builder": {
+		"dockerimage" : "node610",
+		"label": "ob-docker-rhel7"
+	},
+	
+	"zap": {
+		"sonarQuality_gate": "OB-ZAP-QG",
+		"resultdir": "zap-report"
+	},
+	"bluemix": {
+		"domain": "lbg.eu-gb.bluemix.net",
+		"api": "api.lbg.eu-gb.bluemix.net",
+		"credentials": "bluemix-global-deployer",
+		"timeout": "750"
+	},
+	"environments": {
+		"master": {
+			"memory": "2048M",
+			"bluemix": {
+				"org": "POC80_PSD2_Commercial_2018_Development",
+				"env": "DEV"
+			},
+			"tokens": {}
+		},
+		"ci": {
+			"memory": "2048M",
+			"bluemix": {
+				"org": "POC80_PSD2_Commercial_2018_Development",
+				"env": "DEV"
+			},
+			"tokens": {}
+		}
+	},
+	"veracode": {
+		"credentials": "ob-veracode-api-user2",
+		"id": "486310",
+		"notificationList": "LloydsOpenBanking-Commercial@sapient.com"
+	}
+}

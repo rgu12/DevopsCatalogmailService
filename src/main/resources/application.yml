@@ -1,0 +1,5 @@
+# context Path
+server:
+    port: 9080
+    servlet:
+      contextPath: /devopsCatalog/email/v1.0

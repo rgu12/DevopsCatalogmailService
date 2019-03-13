@@ -1,0 +1,24 @@
+<settings>
+    <servers>
+        <server>
+            <id>nexus-releases</id>
+            <username>${nexus.user}</username>
+            <password>${nexus.password}</password>
+        </server>
+        <server>
+            <id>nexus-snapshots</id>
+            <username>${nexus.user}</username>
+            <password>${nexus.password}</password>
+        </server>
+
+    </servers>
+
+    <mirrors>
+        <mirror>
+            <id>mirror</id>
+            <mirrorOf>external:*</mirrorOf>
+            <url>https://nexus.sandbox.extranet.group/nexus/content/groups/maven</url>
+        </mirror>
+    </mirrors>
+
+</settings>

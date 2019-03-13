@@ -1,0 +1,4 @@
+@Library('workflowlib-sandbox@v5.1.6')
+import com.lbg.workflow.sandbox.*
+
+veracodeUpload('search-audit-service', 'pipelines/conf/job-configuration.json', 'pipelines/build/package.groovy')

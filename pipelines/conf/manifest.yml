@@ -1,0 +1,9 @@
+---
+applications:
+- name: j2-mailApi
+  command: export IBM_JAVA_OPTIONS="$IBM_JAVA_OPTIONS -Dhttp-port=$PORT" ; wlp/bin/server  run ees
+  buildpack: liberty-for-java
+  env:
+    JAVA_HOME: /home/vcap/app/.java/jre
+    IBM_JAVA_OPTIONS: '-Dspring.profiles.active=development'
+
