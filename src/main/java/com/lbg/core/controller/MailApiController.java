@@ -10,12 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.lbg.core.model.MailRequest;
 import com.lbg.core.props.ConfigureProperties;
 import com.lbg.core.service.MailService;
+import com.lbg.core.service.impl.MailServiceImpl;
 
 @RestController
 public class MailApiController {
 	
 	@Autowired
-    private MailService mailService;
+    private MailServiceImpl mailServiceImpl;
 	
 	@Autowired
     private ConfigureProperties configureProperties;
@@ -30,7 +31,7 @@ public class MailApiController {
 	 public ResponseEntity<String> mail(@org.springframework.web.bind.annotation.RequestBody MailRequest request) throws IOException {
 		
 		
-	       Boolean  response =	mailService.doMail(request,configureProperties.getProp(request));
+	       Boolean  response =	mailServiceImpl.doMail(request,configureProperties.getProp(request));
 	      
 	       if(response) {
 	        return ResponseEntity.status(HttpStatus.OK).body("Mail Sent Succesfully");
